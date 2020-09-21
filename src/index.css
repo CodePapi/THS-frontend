@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family:'Helvetica Neue' -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* html, body, div, p{
+  font-family:'Helvetica Neue', Helvetica Neue, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+.table{
+  font-family: Neue, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  
+}
+#details>div{
+  background:#C72481;
+  color: white;
+}
+.i{
+  font-weight: lighter;
+}
+#btn-s{
+ display:grid;
+ grid-template-columns: 60% 40%;
+}
+.input{
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid white;
+  background: inherit !important;
+  color: white;
+  width: 100%;
+}
+.input-country{
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid white;
+
+  width: 100%;
+}
+
+.input-country:focus{
+  outline: none;
+}
+.input:focus{
+  outline: none;
+}
+p{
+  font-size: 20px;
+}
+.t-big{
+  font-size: 50px;
+}
+@media screen and (max-width: 1000px) {
+
+ 
+   .t-big{
+    font-size: 14px;
+  }
+   .nav-move{
+     font-size: 14px;
+   } 
+   .name, .place, .date{
+     font-size: small;
+     font-weight: lighter;
+   }
+}
+@media screen and (max-width: 600px) {
+  #btn-s{
+    display: flex;
+       flex-wrap: wrap;
+   
+   
+      }
+      .about{
+       
+        margin-left: 40vw;
+        margin-top: -120px;
+      }
+      .name, .place, .date{
+        font-size: 10px;
+        font-weight: lighter;
+      }
+}
