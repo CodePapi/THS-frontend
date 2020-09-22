@@ -4,10 +4,10 @@ import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
 import Home from './components/home/index';
 import Add_post from './components/Add_post/index'
 import About from "./components/About/index"
-import All_Posts from "./components/Admin/Contact_Form_Table/index"
+import All_Posts from "./components/Admin/Contact_Form_Table/New_Post"
 import Delete_Post from "./components/Admin/Contact_Form_Table/DeleteContact"
 import Edit from "./components/Admin/Contact_Form_Table/Edit"
-import Approved from "./components/Admin/Contact_Form_Table/Approved_Table"
+import Approved from "./components/Admin/Contact_Form_Table/Approved"
 import Register from '../src/components/auth/components/auth/Register';
 import err from './components/404'
 import success from "./components/success"
@@ -33,12 +33,12 @@ function App() {
         token = "";
       }
       const tokenRes = await Axios.post(
-        "http://localhost:301/users/tokenIsValid",
+        "https://tranquil-escarpment-53988.herokuapp.com/users/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
       );
       if (tokenRes.data) {
-        const userRes = await Axios.get("http://localhost:301/users/", {
+        const userRes = await Axios.get("https://tranquil-escarpment-53988.herokuapp.com/users/", {
           headers: { "x-auth-token": token },
         });
         setUserData({
@@ -63,7 +63,7 @@ function App() {
  <Route path="/delete_post/:id" exact component={Delete_Post}/>
  <Route path="/edit/:id" exact component={Edit}/>
  <Route path="/approved" exact component={Approved}/>
- <Route path="/register" exact component={Register}/>
+ <Route path="/idonotexist" exact component={Register}/>
  <Route path="/success" exact component={success}/>
 
 

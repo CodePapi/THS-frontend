@@ -61,7 +61,7 @@ export default class EditPost extends Component {
         // this.setState({ userData: context.userData });
         // const userData = this.context
         // const { userData } = useContext(UserContext)
-        axios.get(Endpoint+'/post/'+this.props.match.params.id)
+        axios.get(Endpoint+'/posts/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     name: response.data.name,

@@ -1,7 +1,8 @@
 import React from 'react'
 // import Logo from "./../../../public/images/LogoTwoHalf.svg"
 import Logo from "../images/LogoTwoHalf.svg"
-import Typed from 'react-typed';
+
+import Zoom from 'react-reveal';
 export default function NavBar() {
     return (
         <div>
@@ -10,12 +11,12 @@ export default function NavBar() {
   <ul className="nav nav-pills">
     <li className="nav-item">
       <div className="nav-link h3 nav-move" style={{color:"#C72481",  fontWeight: "bolder", fontFamily:"Helvetica !important"}} >  
-      
-      <Typed
+      <Zoom>What We Are Telling Our Kids About 2020 by Two Half Stories</Zoom>
+      {/* <Zoom
                     strings={['  What We Are Telling Our Kids About 2020 by Two Half Stories']}
                     typeSpeed={160}
                   
-                />
+                /> */}
      
 </div>
     </li>

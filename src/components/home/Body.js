@@ -70,7 +70,7 @@ export default function Body() {
     <Zoom>
       <div style={{width:"100%"}}>
                <section>      
-                <div className="h2 container t-big" style={{textAlign:'left', height:"40vh", overflowX:"auto", overflowY:"auto", width:"100%"}}>
+                <div className="h2 container t-big" style={{textAlign:'left', height:"35vh", overflowX:"auto", overflowY:"auto", width:"100%"}}>
                  {filteredPerson.message}
                         </div>
                         </section>  
@@ -89,7 +89,7 @@ export default function Body() {
                  </Zoom>
     </div>
   ))}
-  <div>
+  {/* <div>
     <a href="/add_post"><i>Add your own story</i></a>
  <hr/>
 
@@ -100,18 +100,18 @@ export default function Body() {
 <i >Read Newer Stories</i></a>
 
 
-  </div>
+  </div> */}
             </ReactSiema>
             </div>
            
             <div style={{maxHeight:"30vh"}}></div>
             <hr className="container mx-1"style={{background:"white",width:"90%", border:"1px solid white",}}/>
             <div id="btn-s" style={{margin:"auto", width:'90%'}}>
-            <div style={{width:"300px"}}>
-            <button onClick={() => slider.prev()} className="btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1">Previous</button>
+            <div style={{width:"330px"}}>
+            <button onClick={() => slider.prev()} className="btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1" >Previous</button>
             <button onClick={() => slider.next()} className="btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1">Next</button>
             </div>
-            <div style={{width:"300px"}}>
+            <div style={{width:"330px"}}>
             <button style={{width:"40px", height:"40px"}} className="btn  rounded-circle m-1" data-toggle="modal" data-target="#details">?</button>
            <a href="/add_post"><button  className="btn btn-dark btn-lg col-8 col-sm-4 col-xs-6 m-1 p-1">Add</button></a> 
             </div>

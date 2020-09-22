@@ -5,7 +5,7 @@ export default function AdminNav(props) {
     const[close, setClose]=useState(true)
 
     return (
-        <section style={{position:"fixed", zIndex:"100"}}>
+        <section onClick={(()=>setClose(!close))} style={{position:"fixed", zIndex:"100"}}>
         <div className="containr" style={{height:"15vh", width:"100vw", margin:"auto", background:"#C72482"}}>
         <div className="m-3 " style={{float:"left", fontSize:"50px", color:"white"}}><i  onClick={(()=>setClose(!close))} style={{cursor:"pointer"}} className="fa fa-bars"></i></div>
          
