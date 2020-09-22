@@ -6,7 +6,7 @@ import ReactTimeAgo from 'react-time-ago'
 import JavascriptTimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 JavascriptTimeAgo.addLocale(en);
-let Endpoint="http://localhost:4001"
+let Endpoint="https://tranquil-escarpment-53988.herokuapp.com"||"http://localhost:4001"
 
 export default function Body() {
     let slider
@@ -21,7 +21,7 @@ export default function Body() {
           // You can await here
         //   const response = await MyAPI.getData(someId);
         const result = await axios(
-            Endpoint+'/post',
+            Endpoint+'/posts',
           );
           setData(result.data);
         }

@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 // import AuthOptions from '../../auth/components/auth/AuthOptions';
 import axios from 'axios';
 import AdminNav from '../AdminNav';
-let Endpoint="http://localhost:4001"
+let Endpoint="https://tranquil-escarpment-53988.herokuapp.com"||"http://localhost:4001"
 
 // const { userData } = useContext(UserContext)
 
@@ -115,7 +115,7 @@ onChangeName(e) {
       place: this.state.place,
       
         };
-        axios.post(Endpoint+'/post/edit/'+this.props.match.params.id, obj)
+        axios.post(Endpoint+'/posts/edit/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
        this.props.history.push("/posts")
     }

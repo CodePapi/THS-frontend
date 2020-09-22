@@ -61,7 +61,7 @@ export default class DeleteContact extends Component {
     onSubmit(e) {
         e.preventDefault();
        
-        axios.delete('http://localhost:4001/post/'+this.props.match.params.id)
+        axios.delete('https://tranquil-escarpment-53988.herokuapp.com/posts'+this.props.match.params.id)
             .then(res => console.log(res.data));
 
         

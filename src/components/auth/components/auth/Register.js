@@ -20,8 +20,8 @@ export default function Register() {
 
     try {
       const newUser = { email, password, passwordCheck, displayName };
-      await Axios.post("http://localhost:301/users/register", newUser);
-      const loginRes = await Axios.post("http://localhost:301/users/login", {
+      await Axios.post("https://tranquil-escarpment-53988.herokuapp.com/users/register", newUser);
+      const loginRes = await Axios.post("https://tranquil-escarpment-53988.herokuapp.com/users/login", {
         email,
         password,
       });

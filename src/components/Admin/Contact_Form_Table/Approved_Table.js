@@ -5,7 +5,7 @@ import Moment from 'react-moment';
 import 'moment/locale/uk'
 import { Link } from "react-router-dom";
 import AdminNav from "../AdminNav";
-let Endpoint="http://localhost:4001"
+let Endpoint="https://tranquil-escarpment-53988.herokuapp.com" || "http://localhost:4001"
 
 
 export default class Approved extends React.Component {
@@ -25,7 +25,7 @@ export default class Approved extends React.Component {
   }
   
   componentDidMount() {
-    axios.get(`${Endpoint}/post/`)
+    axios.get(`${Endpoint}/posts/`)
       .then(res => {
         const posts = res.data;
         this.setState({ posts });
@@ -33,7 +33,7 @@ export default class Approved extends React.Component {
   }
   
   deleteRow(id, e){
-    axios.delete(`${Endpoint}/post/${id}`)
+    axios.delete(`${Endpoint}/posts/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -47,7 +47,7 @@ export default class Approved extends React.Component {
 
 
   approveRow(id, e){
-    axios.post(`${Endpoint}/post/dissaprove/${id}`)
+    axios.post(`${Endpoint}/posts/dissaprove/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);

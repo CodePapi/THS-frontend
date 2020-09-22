@@ -18,7 +18,7 @@ export default function Login() {
     try {
       const loginUser = { email, password };
       const loginRes = await Axios.post(
-        "http://localhost:301/users/login",
+        "https://tranquil-escarpment-53988.herokuapp.com/users/login",
         loginUser
       );
       setUserData({
@@ -35,9 +35,11 @@ export default function Login() {
     <div className="page" style= {{ height:"100vh", background:"#C72481",color:"white" }}>
       <CloseHeader/>
       <h2 style={{width:"60%", margin:"auto", paddingTop:'80px'}}>Log in</h2>
+      <h3 style={{width:"60%", margin:"auto", paddingTop:'80px'}}>
       {error && (
         <ErrorNotice message={error} clearError={() => setError(undefined)} />
       )}
+      </h3>
       <div style={{width:"60%", margin:"auto", paddingTop:"20vh"}}>
       <form className="form" onSubmit={submit}>
         <label htmlFor="login-email">Email</label>

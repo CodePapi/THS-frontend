@@ -6,7 +6,7 @@ import 'moment/locale/uk'
 import { Link } from "react-router-dom";
 
 import AdminNav from "../AdminNav";
-let Endpoint="http://localhost:4001"
+let Endpoint="https://tranquil-escarpment-53988.herokuapp.com"||"http://localhost:4001"
 
 
 
@@ -28,7 +28,7 @@ export default class PostList extends React.Component {
   }
   
   componentDidMount() {
-    axios.get(`${Endpoint}/post/`)
+    axios.get(`${Endpoint}/posts/`)
       .then(res => {
         const posts = res.data;
         this.setState({ posts });
@@ -36,7 +36,7 @@ export default class PostList extends React.Component {
   }
   
   deleteRow(id, e){
-    axios.delete(`${Endpoint}/post/${id}`)
+    axios.delete(`${Endpoint}/posts/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -49,7 +49,7 @@ export default class PostList extends React.Component {
 
 
   approveRow(id, e){
-    axios.post(`${Endpoint}/post/approved/${id}`)
+    axios.post(`${Endpoint}/posts/approved/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -65,7 +65,7 @@ export default class PostList extends React.Component {
       <div>
        <AdminNav new_entry={this.state.posts.filter(person => person.approval_status ===true).length} approved={this.state.posts.filter(person => person.approval_status ===false).length}/>
         <div style={{height:"100px"}}></div>
-        <h1>NEW ENTRY</h1>
+        
   <div style={{overflowX: "auto"}}>
         <table className="table table-bordered">
             <thead style={{ color:"white",background:"#C72482" , }}>

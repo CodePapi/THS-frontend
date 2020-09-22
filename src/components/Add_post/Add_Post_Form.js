@@ -2,7 +2,7 @@ import React, { useState } from 'react'
  import { CountryDropdown} from 'react-country-region-selector';
  import { useHistory } from "react-router-dom";
 import axios from 'axios'
-let Endpoint="http://localhost:4001"
+let Endpoint= "https://tranquil-escarpment-53988.herokuapp.com" || "http://localhost:4001" 
 
 
 export default function Add_Post_Form() {
@@ -41,7 +41,7 @@ export default function Add_Post_Form() {
             country:countryAdd.country
             
               };
-        axios.post(Endpoint+'/post/add',  obj)
+        axios.post(Endpoint+'/posts/add',  obj)
           .then(function (response) {
               console.log(response)
          
