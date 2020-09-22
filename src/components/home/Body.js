@@ -96,7 +96,7 @@ export default function Body() {
 <a href ="/about"> <i className="h1"> About Us</i></a>
 <hr/>
 
-<a href href="/">
+<a  href="/">
 <i >Read Newer Stories</i></a>
 
 
