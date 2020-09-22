@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
  import { CountryDropdown} from 'react-country-region-selector';
+ import { useHistory } from "react-router-dom";
 import axios from 'axios'
 let Endpoint="http://localhost:4001"
 
 
 export default function Add_Post_Form() {
-
+    const history=useHistory()
 
     // const [loading, setLoading] = useState(true);
     // // const [items, setItems] = useState(...);
@@ -30,6 +31,7 @@ export default function Add_Post_Form() {
     
 
     const handleSubmit = (e) => {
+        history.push('/')
         e.preventDefault()
         const obj = {
             message: post.message,
@@ -42,19 +44,12 @@ export default function Add_Post_Form() {
         axios.post(Endpoint+'/post/add',  obj)
           .then(function (response) {
               console.log(response)
+         
           })
           .catch(function (error) {
               console.log(error)
           }) 
-        //   axios.post(Endpoint+'/post/add',  countryAdd)
-        //   .then(function (response) {
-        //       console.log(response)
-        //   })
-        //   .catch(function (error) {
-        //       console.log(error)
-        //   }) 
-
-
+     
 
 
           setPost({ message: '', name: '', place: ''})
@@ -113,122 +108,4 @@ export default function Add_Post_Form() {
 
 
 
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react'
-// import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
-// import axios from 'axios'
-// let Endpoint="http://localhost:4001"
-
-
-// export default function Add_Post_Form() {
-//     // constructor (props) {
-//     //     super(props);
-//     //     this.state = { country: '', region: '' };
-//     //   }
-    
-//      let val
-//     const [dropDown, setDropDown]=useState({country:""})
-//     const [post, setPost] = useState(
-//         { message: '', name: '', place: ''}
-//     );
-
-//     useEffect(() => {
-//         effect
-//         return () => {
-//             set
-//         }
-//     }, [input])
-//     const handleChange = (event) => {
-        
-//         setPost({...post, [event.target.name]: event.target.value  })
-        
-//         // setPost({[post.country.name]: post.country.value })
-       
-//     }
-
-
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault()
-//         axios.post(Endpoint+'/post/add', post)
-//           .then(function (response) {
-//               console.log(response)
-              
-//           })
-//           .catch(function (error) {
-//               console.log(error)
-//           }) 
-
-
-
-
-//           setPost()({ message: '', name: '', place: ''}); }
-
-          
-
-//         // const  selectCountry =(val)=> {
-//         //     setPost({ country: val });
-//         //   }
-        
-//         //  const selectRegion= (val)=> {
-//         //    setDropDown({ region: val });
-//         //   }
-//     return (
-//         <div style={{height:"80vh", width:"100%", background:"#C72481", margin:"auto"}}>
-//             <form onSubmit={handleSubmit}>
-//                 <div className="form-group" style={{width:"70%", margin:"auto"}}>
-//                 <label className="label h3 text-white">Story</label>
-//                 <textarea className="input border-top-0 border-left-0 bg-contain"
-//                 name="message"
-//                  value={post.message} onChange={handleChange} required
-//                  maxlength="50" placeholder="Enter text here"
-//                 ></textarea>
-//                 </div>
-//                 <div className="form-group" style={{width:"70%", margin:"auto"}}>
-//                 <label className="label h3 text-white">Name</label>
-//                 <input className="input border-top-0 border-left-0 bg-contain"
-//                 name="name"
-//                 value={post.name} onChange={handleChange}
-               
-//                 />
-//                 </div>
-//                 <div className="form-group" style={{width:"70%", margin:"auto"}}>
-//                 <label className="label h3 text-white">Location</label>
-//                 <input className="input border-top-0 border-left-0 bg-contain"
-//                 name="place"
-//                 value={post.place} onChange={handleChange} 
-//                />
-//                 </div>
-
-
-//      <div className="form-group" style={{width:"70%", margin:"auto"}}>        
-//        {/* <CountryDropdown
-//        name="country"
-//        className="input-country border-top-0 border-left-0 bg-contain text-green"
- 
-//   labelType="long"
-//   valueType="short"
-//   value={post.country} onChange={selectCountry, handleChange} 
-//   /> */}
-// {/* <RegionDropdown 
-//   country={dropDown.country}
-//   value={dropDown.region}
-//   countryValueType="short"
-//   labelType="short"
-//   valueType="short"
-//   onChange={selectRegion} /> */}
-//   </div>
-//                 <div className="form-group pt-5" style={{width:"70%", margin:"auto"}}>
-//                 <button  className="btn btn-dark  col-8 col-sm-4 col-xs-5 m-1" >Submit</button>
-//                 </div>
-//             </form>
-//         </div>
-//     )
-// }
 

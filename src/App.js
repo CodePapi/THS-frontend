@@ -10,6 +10,7 @@ import Edit from "./components/Admin/Contact_Form_Table/Edit"
 import Approved from "./components/Admin/Contact_Form_Table/Approved_Table"
 import Register from '../src/components/auth/components/auth/Register';
 import err from './components/404'
+import success from "./components/success"
 
 
 import Axios from "axios";
@@ -63,6 +64,7 @@ function App() {
  <Route path="/edit/:id" exact component={Edit}/>
  <Route path="/approved" exact component={Approved}/>
  <Route path="/register" exact component={Register}/>
+ <Route path="/success" exact component={success}/>
 
 
  <Route exact path="/test" component={HomeLog} />
