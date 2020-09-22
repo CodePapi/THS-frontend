@@ -57,7 +57,7 @@ export default function Add_Post_Form() {
           
           ; }
     return (
-        <div style={{height:"80vh", width:"100%", background:"#C72481", margin:"auto"}}>
+        <div style={{height:"90vh", width:"100%", background:"#C72481", margin:"auto"}}>
             <form onSubmit={handleSubmit}>
                 <div className="form-group" style={{width:"70%", margin:"auto"}}>
                 <label className="label h3 text-white">Story</label>
