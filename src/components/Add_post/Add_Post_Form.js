@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
- import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
+import React, { useState } from 'react'
+ import { CountryDropdown} from 'react-country-region-selector';
 import axios from 'axios'
 let Endpoint="http://localhost:4001"
 

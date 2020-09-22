@@ -1,27 +1,15 @@
 import React from "react";
-import Sidebar from "react-sidebar";
-import MaterialTitlePanel from "../material_title_panel";
-import SidebarContent from "../SiddebarContent";
+
 import axios from 'axios';
 import Moment from 'react-moment';
 import 'moment/locale/uk'
 import { Link } from "react-router-dom";
-import Close_header from "../../Add_post/close_header";
+
 import AdminNav from "../AdminNav";
 let Endpoint="http://localhost:4001"
 
-const styles = {
-    contentHeaderMenuLink: {
-      textDecoration: "none",
-      color: "white",
-      padding: 8
-    },
-    content: {
-      padding: "16px"
-    }
-  };
 
-const mql = window.matchMedia(`(min-width: 1500px)`);
+
   
 export default class PostList extends React.Component {
 
@@ -75,7 +63,7 @@ export default class PostList extends React.Component {
   render() {
     return (
       <div>
-       <AdminNav new_entry={this.state.posts.filter(person => person.approval_status ==true).length} approved={this.state.posts.filter(person => person.approval_status ==false).length}/>
+       <AdminNav new_entry={this.state.posts.filter(person => person.approval_status ===true).length} approved={this.state.posts.filter(person => person.approval_status ===false).length}/>
         <div style={{height:"100px"}}></div>
         <h1>NEW ENTRY</h1>
   <div style={{overflowX: "auto"}}>
@@ -91,7 +79,7 @@ export default class PostList extends React.Component {
             </thead>
   
             <tbody>
-              {this.state.posts.filter(person => person.approval_status ==true).reverse().map((post) => (
+              {this.state.posts.filter(person => person.approval_status ===true).reverse().map((post) => (
                 <tr>
                   <td style={{fontSize:"12px"}}><Moment >{post.date}</Moment></td>
                  

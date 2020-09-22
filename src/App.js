@@ -9,11 +9,10 @@ import Delete_Post from "./components/Admin/Contact_Form_Table/DeleteContact"
 import Edit from "./components/Admin/Contact_Form_Table/Edit"
 import Approved from "./components/Admin/Contact_Form_Table/Approved_Table"
 import Register from '../src/components/auth/components/auth/Register';
-
+import err from './components/404'
 
 
 import Axios from "axios";
-import Header from "../src/components/auth/components/layout/Header";
 import HomeLog from "../src/components/auth/components/pages/Home";
 import Login from "../src/components/auth/components/auth/Login";
 
@@ -68,6 +67,9 @@ function App() {
 
  <Route exact path="/test" component={HomeLog} />
               <Route path="/login" component={Login} />
+              <Route path="/404" component={err} />
+     
+     <Redirect to="/404" />
               
  {/* <Route path="/posts/:id" exact component={All_Posts}/> */}
  </Switch>

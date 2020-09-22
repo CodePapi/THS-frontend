@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import {Link} from "react-router-dom"
 import AuthOptions from '../auth/components/auth/AuthOptions'
 export default function AdminNav(props) {

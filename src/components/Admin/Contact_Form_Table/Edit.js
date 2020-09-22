@@ -1,6 +1,5 @@
-import React, {Component,useContext} from 'react';
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import React, {Component} from 'react';
+
 // import UserContext from "../../auth/context/userContext";
 // import AuthOptions from '../../auth/components/auth/AuthOptions';
 import axios from 'axios';
@@ -118,9 +117,7 @@ onChangeName(e) {
         };
         axios.post(Endpoint+'/post/edit/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
-
-        // this.props.history.push('/applicants_table');
-       this.props. history.push("/posts")
+       this.props.history.push("/posts")
     }
 
     render() {

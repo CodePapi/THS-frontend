@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import UserContext from "../../context/userContext";
 import Axios from "axios";
 import ErrorNotice from "../misc/ErrorNotice";
-import Close_header from "../../../Add_post/close_header";
+import CloseHeader from "../../../Add_post/close_header";
 
 export default function Register() {
   const [email, setEmail] = useState();
@@ -38,7 +38,7 @@ export default function Register() {
 
   return (
     <div className="page" style= {{ height:"100vh", background:"#C72481",color:"white" }}>
-     <Close_header/>
+     <CloseHeader/>
       <h2 style={{width:"60%", margin:"auto", paddingTop:'80px'}}>Register</h2>
       <h2 style={{width:"60%", margin:"auto",height:'40px'}}>
       {error && (

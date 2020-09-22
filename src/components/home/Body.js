@@ -2,8 +2,6 @@ import React,{useEffect,useState} from 'react'
 import ReactSiema from 'react-siema'
 import axios from "axios"
 import Zoom from 'react-reveal/Zoom';
-import { Link } from 'react-router-dom';
-import Moment from 'react-moment';
 import ReactTimeAgo from 'react-time-ago'
 import JavascriptTimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
@@ -54,7 +52,7 @@ export default function Body() {
                   </div>
             ))} */}
 
-{data.filter(person => person.approval_status ==false).reverse().sort(() => Math.random() - 0.5).map(filteredPerson => (
+{data.filter(person => person.approval_status ===false).reverse().sort(() => Math.random() - 0.5).map(filteredPerson => (
     <div key={filteredPerson._id} >
     <Zoom>
       <div style={{width:"100%"}}>
