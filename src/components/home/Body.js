@@ -14,13 +14,26 @@ export default function Body() {
 
     const [data, setData] = useState([]);
  
-  useEffect(async () => {
-    const result = await axios(
-      Endpoint+'/post',
-    );
+
+
+    useEffect(() => {
+        async function fetchData() {
+          // You can await here
+        //   const response = await MyAPI.getData(someId);
+        const result = await axios(
+            Endpoint+'/post',
+          );
+          setData(result.data);
+        }
+    fetchData()},[]
+    )
+//   useEffect(async () => {
+//     const result = await axios(
+//       Endpoint+'/post',
+//     );
  
-    setData(result.data);
-  }, []);
+//     setData(result.data);
+//   }, []);
   const options = {
     duration: 1000,
     loop: true,
