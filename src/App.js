@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import { Cube} from 'react-preloaders';
+// import { Cube} from 'react-preloaders';
 import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
 import Home from './components/home/index';
 import Add_post from './components/Add_post/index'
@@ -53,7 +53,7 @@ function App() {
 
   return (
     <BrowserRouter>
-   <Cube color="#C72481" background="white"/>
+   {/* <Cube color="#C72481" background="white"/> */}
    <UserContext.Provider value={{ userData, setUserData }}>
     <Switch>
  <Route path="/" exact component={Home} />
