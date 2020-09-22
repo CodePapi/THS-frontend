@@ -40,9 +40,9 @@ export default function Body() {
     resizeDebounce: 400
 }
     return (
-        <div style={{height:"100%", width:"100%", background:"#C72481", margin:"auto", paddingBottom:"15vh"}}>
+        <div style={{height:"100%", width:"100%", background:"#C72481", margin:"auto", paddingBottom:"10vh"}}>
           
-            <div className="text-white text-center container-fluid" style={{margin:"auto", width:"90vw"}}>
+            <div className="text-white text-center container-fluid" style={{margin:"auto", width:"95vw"}}>
                 <div style={{minHeight:"50vh", margin:"auto"}} className="pt-3 mb-">
                 <div style={{marginTop:"40px"}}></div>  
             <ReactSiema height="100vh" {...options} ref={siema => slider = siema}>
@@ -106,7 +106,7 @@ export default function Body() {
            
             <div style={{maxHeight:"30vh"}}></div>
             <hr className="container mx-1"style={{background:"white",width:"90%", border:"1px solid white",}}/>
-            <div id="btn-s" style={{margin:"auto", width:'90%'}}>
+            <div id="btn-s" style={{margin:"auto", width:'100%'}}>
             <div style={{width:"330px"}}>
             <button onClick={() => slider.prev()} className="btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1" >Previous</button>
             <button onClick={() => slider.next()} className="btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1">Next</button>

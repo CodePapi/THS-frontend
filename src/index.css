@@ -62,13 +62,14 @@ p{
  
    .t-big{
     font-size: 24px;
+    font-weight: lighter;
   }
    .nav-move{
      font-size: 14px;
    } 
    .name, .place, .date{
-     font-size: small;
-     font-weight: lighter;
+     font-size: medium;
+     font-weight: bolder;
    }
 }
 @media screen and (max-width: 600px) {
