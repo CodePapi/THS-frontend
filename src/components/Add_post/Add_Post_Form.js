@@ -31,7 +31,7 @@ export default function Add_Post_Form() {
     
 
     const handleSubmit = (e) => {
-        history.push('/')
+        history.push('/success')
         e.preventDefault()
         const obj = {
             message: post.message,
