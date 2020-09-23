@@ -85,7 +85,7 @@ p{
         margin-top: -120px;
       }
       .name, .place, .date{
-        font-size: 10px;
-        font-weight: lighter;
+        font-size: 12px;
+        font-weight: larger;
       }
 }
