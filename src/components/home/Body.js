@@ -70,14 +70,14 @@ export default function Body() {
     <Zoom>
       <div style={{width:"100%"}}>
                <section>      
-                <div className="h2 container t-big" style={{textAlign:'left', height:"35vh", overflowX:"auto", overflowY:"auto", width:"100%"}}>
+                <div className="h2 container t-big" style={{textAlign:'left', height:"30vh", overflowX:"auto", overflowY:"auto", width:"100%"}}>
                  {filteredPerson.message}
                         </div>
                         </section>  
                         <br/>
                         <br/>
                     <div>
-                      <div height="100px"></div>
+                      <div height="80px"></div>
                       <div className="container"  style={{display:"flex"}}>
 <div className="h3 mx-1 name">{filteredPerson.name}</div> <div className="h3 mx-1 name">|</div> <div className="h3 mx-1 place">{filteredPerson.place}, {filteredPerson.country}</div>  <div className="h3 mx-1 name">|</div>
             <div className="h3 mx-1 date"><ReactTimeAgo date={filteredPerson.date} locale="en"/></div>
