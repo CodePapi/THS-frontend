@@ -20,10 +20,15 @@ export default function NavBar() {
      
 </div>
     </li>
-    
+    <li className="nav-item about-nav">
+
+    </li>
+    <li className="nav-item about-nav">
+ 
+    </li>
   
     <li className="nav-item about-nav">
-      <a href="/about" className="nav-link h2 about"style={{color:"#C72481", fontWeight: "bolder"}} >About</a>
+      <a href="/about" className="nav-link h3 about"style={{color:"#C72481", fontWeight: "bolder"}} >About</a>
     </li>
  
   </ul>
