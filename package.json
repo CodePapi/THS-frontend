@@ -20,6 +20,7 @@
     "react-scripts": "3.4.3",
     "react-sidebar": "^3.0.2",
     "react-siema": "^1.0.1",
+    "react-slideshow-image": "^3.3.0",
     "react-time-ago": "^6.0.1",
     "react-typed": "^1.2.0"
   },

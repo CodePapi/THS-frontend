@@ -1,10 +1,14 @@
-body {
+/* body {
   margin: 0;
   font-family:'Helvetica Neue' -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} */
+
+body, html, div, section, h1,h2,h3,h4,h5,span{
+  font-family: "Poppins";
 }
 
 /* html, body, div, p{
@@ -17,30 +21,27 @@ body {
   
 }
 #details>div{
-  background:#C72481;
+  background:gray;
   color: white;
 }
 .i{
   font-weight: lighter;
 }
-#btn-s{
- display:grid;
- grid-template-columns: 60% 40%;
-}
+
 .input{
   border-left: none;
   border-right: none;
   border-top: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #323B43;
   background: inherit !important;
-  color: white;
+  color: #323B43;
   width: 100%;
 }
 .input-country{
   border-left: none;
   border-right: none;
   border-top: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #323B43;
 
   width: 100%;
 }
@@ -75,7 +76,7 @@ p{
 @media screen and (max-width: 600px) {
   #btn-s{
     display: flex;
-       flex-wrap: wrap;
+      
    
    
       }

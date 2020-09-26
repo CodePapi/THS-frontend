@@ -11,6 +11,7 @@ import Approved from "./components/Admin/Contact_Form_Table/Approved"
 import Register from '../src/components/auth/components/auth/Register';
 import err from './components/404'
 import success from "./components/success"
+import Hometext from "../src/components/home/Home"
 
 
 import Axios from "axios";
@@ -65,6 +66,7 @@ function App() {
  <Route path="/approved" exact component={Approved}/>
  <Route path="/idonotexist" exact component={Register}/>
  <Route path="/success" exact component={success}/>
+ <Route path="/ht" exact component={Hometext}/>
 
 
  <Route exact path="/test" component={HomeLog} />

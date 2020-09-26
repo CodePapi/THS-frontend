@@ -1,13 +1,17 @@
 import React,{useEffect,useState} from 'react'
+import classes from "./home.module.css"
 import ReactSiema from 'react-siema'
 import axios from "axios"
 import Zoom from 'react-reveal/Zoom';
+import {Fade}from 'react-reveal';
+import Typed from "react-typed"
 import ReactTimeAgo from 'react-time-ago'
 import JavascriptTimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 JavascriptTimeAgo.addLocale(en);
-let Endpoint="https://tranquil-escarpment-53988.herokuapp.com"||"http://localhost:4001"
 
+
+let Endpoint="https://tranquil-escarpment-53988.herokuapp.com"||"http://localhost:4001"
 export default function Body() {
     let slider
   
@@ -20,6 +24,7 @@ export default function Body() {
         async function fetchData() {
           // You can await here
         //   const response = await MyAPI.getData(someId);
+       
         const result = await axios(
             Endpoint+'/posts',
           );
@@ -37,13 +42,19 @@ export default function Body() {
   const options = {
     duration: 1000,
     loop: true,
+    
     resizeDebounce: 400
 }
     return (
-        <div style={{height:"100%", width:"100%", background:"#C72481", margin:"auto", paddingBottom:"10vh"}}>
+        // <div onClick={() => {setInterval(() => {slider.next()
+                
+        // }, 7000);}} 
+        
+        
+        <div style={{height:"100%", width:"100%",  margin:"auto", paddingBottom:"10vh"}}>
           
-            <div className="text-white text-center container-fluid" style={{margin:"auto", width:"95vw"}}>
-                <div style={{minHeight:"50vh", margin:"auto"}} className="pt-3 mb-">
+            <div className=" text-center container-fluid" style={{margin:"auto", width:"95vw"}}>
+                <div style={{minHeight:"50vh", margin:"auto"}} className="pt-1 mb-">
                 <div style={{marginTop:"40px"}}></div>  
             <ReactSiema height="100vh" {...options} ref={siema => slider = siema}>
           
@@ -70,8 +81,13 @@ export default function Body() {
     <Zoom>
       <div style={{width:"100%"}}>
                <section>      
-                <div className="h2 container t-big" style={{textAlign:'left', height:"30vh", overflowX:"auto", overflowY:"auto", width:"100%"}}>
-                 {filteredPerson.message}
+                <div className="h2 container t-big" style={{textAlign:'left', height:"40vh", overflowX:"auto", overflowY:"auto", width:"100%"}}>
+                
+                <Fade> <Typed
+                    strings={[`<Fade>${filteredPerson.message}</Fade>`]}
+                    typeSpeed={10}
+                  
+                /></Fade>
                         </div>
                         </section>  
                         <br/>
@@ -105,17 +121,32 @@ export default function Body() {
             </div>
            
             <div style={{maxHeight:"30vh"}}></div>
-            <hr className="container mx-1"style={{background:"white",width:"90%", border:"1px solid white",}}/>
-            <div id="btn-s" style={{margin:"auto", width:'100%'}}>
-            <div style={{width:"330px"}}>
-            <button onClick={() => slider.prev()} className="btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1" >Previous</button>
-            <button onClick={() => slider.next()} className="btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1">Next</button>
+            <hr className="container"style={{background:"white",width:"96%", border:"1px solid black"}}/>
+            
+           
+           
+            <div className="d-fex">
+             
+            <div  onClick={() => slider.prev()} className={classes.btn + " btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1"} >Previous</div>
+            <div onClick={() =>slider.next()} className={classes.btn +" btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1"}>Next</div>
+            <div onClick={() =>slider.next()} className={classes.btn +" " + classes.btnhide +" btn btn-lg col-5 col-sm-4 col-xs-6 m-1"}></div>
+      
+            <a href="/add_post"style={{background:"black", color:"white"}} className={classes.btn +" btn btn-lg btn-white border border-1 col-5 col-sm-4 col-xs-6 m-1" } >Add</a>
+      
+  
+
+            {/* <div > */}
+            {/* <button style={{width:"40px", height:"40px"}} className="btn  rounded-circle m-1" data-toggle="modal" data-target="#details">?</button> */}
+          
+          
+           {/* <a style={{width:"20vw"}}  className="btn btn-dark btn-lg col-8 col-sm-4 col-xs-6 m-1 p-1" href="/add_post">Add</a> 
+            */}
+            {/* </div> */}
             </div>
-            <div style={{width:"330px"}}>
-            <button style={{width:"40px", height:"40px"}} className="btn  rounded-circle m-1" data-toggle="modal" data-target="#details">?</button>
-           <a href="/add_post"><button  className="btn btn-dark btn-lg col-8 col-sm-4 col-xs-6 m-1 p-1">Add</button></a> 
-            </div>
-            </div>
+          
+           
+
+            
         </div>
 
 

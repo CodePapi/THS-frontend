@@ -5,7 +5,7 @@ import TypedSection from './TypedSection'
 
 export default function index() {
     return (
-        <div style={{background:"#C72481"}}>
+        <div >
             <CloseHeader/>
             <TypedSection/>
             <AddPostForm/>
