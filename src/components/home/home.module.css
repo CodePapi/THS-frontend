@@ -3,7 +3,7 @@
 } */
 .btn{
     width: 15vw !important;
-    border-radius: 30px;
+    border-radius: 500px;
 }
 
 @media screen and (max-width: 600px) {
@@ -12,6 +12,7 @@
     }
     .btn{
         font-size: 10px;
+        width: 30vw;
     }
 }
 .h2{
