@@ -2,6 +2,7 @@ import React from 'react'
 // import Logo from "./../../../public/images/LogoTwoHalf.svg"
 import Logo from "../images/LogoTwoHalf.svg"
 import classes from "../home/home.module.css"
+import "../home/swing.css"
 // import Zoom from 'react-reveal';
 
 export default function NavBar() {
@@ -28,8 +29,8 @@ export default function NavBar() {
  
     {/* </li> */}
   
-    <li className="">
-      <a href="/about" className="h3 "style={{color:"black", fontWeight: "bolder"}} data-toggle="modal" data-target="#details"><i className="fa fa-book"></i></a>
+    <li className="swing">
+      <a href="/about" className="h1 "style={{color:"black", fontWeight: "bolder"}} data-toggle="modal" data-target="#details"><i className="fa fa-book"></i></a>
     </li>
  
   </ul>
@@ -69,7 +70,7 @@ export default function NavBar() {
             </div> */}
             <ul style={{listStyle:'none'}}>
               <li><a href="/about" className={classes.h2+ " h3"}>About</a></li>
-              <li data-toggle="modal" data-target="#detail"><div className={classes.h2+ " h3"}>Details</div></li>
+              <li data-toggle="modal" data-target="#details"><a href="/about" className={classes.h2+ " h3"}>Details</a></li>
               <li><a href="/add_post" className={classes.h2+ " h3"}>Add</a></li>
             </ul>
             

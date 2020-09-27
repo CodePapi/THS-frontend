@@ -127,11 +127,11 @@ export default function Body() {
            
             <div className="d-fex">
              
-            <div  onClick={() => slider.prev()} className={classes.btn + " btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1"} >Previous</div>
+            <div  onClick={() => slider.prev()} className={classes.btn + " btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1"} >Prev</div>
             <div onClick={() =>slider.next()} className={classes.btn +" btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1"}>Next</div>
-            <div onClick={() =>slider.next()} className={classes.btn +" " + classes.btnhide +" btn btn-lg col-5 col-sm-4 col-xs-6 m-1"}></div>
+            <div className={classes.btn +" " + classes.btnhide +" btn btn-lg col-5 col-sm-4 col-xs-6 m-1"}></div>
       
-            <a href="/add_post"style={{background:"black", color:"white"}} className={classes.btn +" btn btn-lg btn-white border border-1 col-5 col-sm-4 col-xs-6 m-1" } >Add</a>
+            <a href="/add_post"className={classes.btn +" btn btn-lg btn-dark col-5 col-sm-4 col-xs-6 m-1"} ><i className="fa fa-pencil"></i>Add</a>
       
   
 
