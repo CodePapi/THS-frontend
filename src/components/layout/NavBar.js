@@ -13,8 +13,8 @@ export default function NavBar() {
         
      
         
-            <nav id="navbar-example2" class="navbar navbar-white bg-white d-flex">
-  <a className="navbar-brand" href="/"><img src={Logo} style={{width:"40%"}} alt="logo"/>
+            <nav class="navba container navbar-white bg-white d-flex pt-3">
+  <a className="navbar-brand" style={{width:'100%'}} href="/"><img src={Logo} style={{width:"140px"}} alt="logo"/>
   
  
   </a>
@@ -34,12 +34,6 @@ export default function NavBar() {
  
     {/* </li> */}
   
-    <li className={styles.dropdown+" swing"} >
-      <a href="/about" className={"h1"} style={{color:"black", fontWeight: "bolder"}} data-toggle="modal" data-target="#details"><i className={" fa fa-book"}  ></i>
- 
-      
-      </a>
-    </li>
 
  <li className={styles.dropdowncontent}>
   <img src={Logo} alt="Cinque Terre" width="300" height="200"/>
@@ -49,6 +43,13 @@ export default function NavBar() {
 
   </ul>
 
+  
+  <div className={styles.dropdown+" swing"} >
+      <a href="/about" className={"h1"} style={{color:"black", fontWeight: "bolder"}} data-toggle="modal" data-target="#details"><i className={" fa fa-book"}  ></i>
+ 
+      
+      </a>
+    </div>
 
 
 </nav>
@@ -59,13 +60,18 @@ export default function NavBar() {
 
 <div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style={{  background:"black"}}>
-            <div class="modal-header">
-
+    <div class="modal-dialog" role="document" style={{margin:"aut", textAlign:"center", maxWidth:"200px"}}>
+        <div class="modal-content" style={{  background:"gray"}}>
+            {/* <div class="modal-header" style={{textAlign:"center"}}>
+hello
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+            </div> */}
+            <div style={{margin:"auto"}}>
+            <div data-dismiss="modal" aria-label="Close" style={{width:"40px", height:"40px", borderRadius:"50%", background:"black", cursor:"pointer"}}>
+            <span className="h1" aria-hidden="true">&times;</span>
+            </div>
             </div>
             {/* <div class="modal-body">
                 <h5 class="modal-title" id="exampleModalLabel">
@@ -82,11 +88,11 @@ export default function NavBar() {
 
                 </h5>
             </div> */}
-            <ul style={{listStyle:'none'}}>
-              <li><a href="/about" className={classes.h2+ " h3"}>About</a></li>
-              <li data-toggle="modal" data-target="#details"><a href="/about" className={classes.h2+ " h3"}>Details</a></li>
-              <li><a href="/add_post" className={classes.h2+ " h3"}>Add</a></li>
-            </ul>
+            <div style={{listStyle:'none',}}>
+              <div><a href="/about" className={classes.h2+ " h3"}>About</a></div>
+              {/* <li data-toggle="modal" data-target="#details">Details</li> */}
+              <div><a href="/add_post" className={classes.h2+ " h3"}>Add</a></div>
+            </div>
             
             
 
