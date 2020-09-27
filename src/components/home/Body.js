@@ -76,7 +76,7 @@ export default function Body() {
                   </div>
             ))} */}
 
-{data.filter(person => person.approval_status ===false).reverse().sort(() => Math.random() - 0.5).map(filteredPerson => (
+{data.filter(person => person.approval_status ===true).reverse().sort(() => Math.random() - 0.5).map(filteredPerson => (
     <div key={filteredPerson._id} >
     <Zoom>
       <div style={{width:"100%"}}>
