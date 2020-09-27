@@ -72,7 +72,7 @@ export default function Add_Post_Form() {
                 <input className="input border-top-0 border-left-0 bg-contain"
                 name="name"
                 value={post.name} onChange={handleChange}
-               required
+              
                 />
                 </div>
                 <div className="form-group" style={{width:"70%", margin:"auto"}}>
@@ -80,7 +80,7 @@ export default function Add_Post_Form() {
                 <input className="input border-top-0 border-left-0 bg-contain"
                 name="place"
                 value={post.place} onChange={handleChange} 
-                required
+              
                />
                 </div>
                 {/* <div className="form-group" style={{width:"70%", margin:"auto"}}>   

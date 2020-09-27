@@ -3,6 +3,8 @@ import React from 'react'
 import Logo from "../images/LogoTwoHalf.svg"
 import classes from "../home/home.module.css"
 import "../home/swing.css"
+import styles from "./nav.module.css"
+
 // import Zoom from 'react-reveal';
 
 export default function NavBar() {
@@ -12,7 +14,10 @@ export default function NavBar() {
      
         
             <nav id="navbar-example2" class="navbar navbar-white bg-white d-flex">
-  <a className="navbar-brand" href="/"><img src={Logo} style={{width:"40%"}} alt="logo"/></a>
+  <a className="navbar-brand" href="/"><img src={Logo} style={{width:"40%"}} alt="logo"/>
+  
+ 
+  </a>
  
   <ul className="nav nav-pills">
     {/* <li className="nav-item">
@@ -29,10 +34,19 @@ export default function NavBar() {
  
     {/* </li> */}
   
-    <li className="swing">
-      <a href="/about" className="h1 "style={{color:"black", fontWeight: "bolder"}} data-toggle="modal" data-target="#details"><i className="fa fa-book"></i></a>
-    </li>
+    <li className={styles.dropdown+" swing"} >
+      <a href="/about" className={"h1"} style={{color:"black", fontWeight: "bolder"}} data-toggle="modal" data-target="#details"><i className={" fa fa-book"}  ></i>
  
+      
+      </a>
+    </li>
+
+ <li className={styles.dropdowncontent}>
+  <img src={Logo} alt="Cinque Terre" width="300" height="200"/>
+  <div className={styles.desc}>Beautiful Cinque Terre</div>
+ 
+ </li>
+
   </ul>
 
 

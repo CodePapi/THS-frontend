@@ -95,8 +95,10 @@ export default function Body() {
                     <div>
                       <div height="80px"></div>
                       <div className="container"  style={{display:"flex"}}>
-<div className="h3 mx-1 name">{filteredPerson.name}</div> <div className="h3 mx-1 name">|</div> <div className="h3 mx-1 place">{filteredPerson.place}, {filteredPerson.country}</div>  <div className="h3 mx-1 name">|</div>
-            <div className="h3 mx-1 date"><ReactTimeAgo date={filteredPerson.date} locale="en"/></div>
+                      <div className="h3 mx-1 date"><ReactTimeAgo date={filteredPerson.date} locale="en"/></div>
+                      <div className="h3 mx-1 name" style={{fontWeight:"bolder"}}>.</div>
+<div className="h3 mx-1 name">{filteredPerson.name}</div> <div className="h3 mx-1 name fontweight-bolder" style={{fontWeight:"bolder"}}>.</div> <div className="h3 mx-1 place">{filteredPerson.place} </div>  
+           
              {/* <div className="h3 mx-5 date"><Moment >{filteredPerson.date}</Moment></div> */}
             </div>
                  
