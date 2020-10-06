@@ -12,8 +12,7 @@ export default function Add_Post_Form() {
 
     const validationScheme = yup.object().shape({
         message: yup.string().required("Required"),
-        name: yup.string().required("Required"),
-        place: yup.string().required("Required"),
+        name: yup.string().required("Required")
     })
 
     function cancelPostPage() {
@@ -38,6 +37,7 @@ export default function Add_Post_Form() {
                     .catch((error) => {
                         console.log(error)
                     })
+                    history.push("/")
                 setSubmitting(false)
             }}>
                 {({values, errors, touched, dirty, isValid, isSubmitting})=>(

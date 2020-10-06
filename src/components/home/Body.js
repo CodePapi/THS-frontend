@@ -7,7 +7,7 @@ import {Fade}from 'react-reveal';
 import Typed from "react-typed";
 import { ShareSVG, PrevSVG, NextSVG } from './HomepageSVG';
 import ReactTimeAgo from 'react-time-ago'
-import { useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 import JavascriptTimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 JavascriptTimeAgo.addLocale(en);
@@ -86,10 +86,13 @@ export default function Body() {
                     <div  onClick={() => slider.prev()}><PrevSVG /></div>
                     <div onClick={() =>slider.next()}><NextSVG /></div>
                 </div>
-                <button onClick={shareLink} href="/add_post">
+                <a href="/add_post">
+                <button onClick={shareLink}>
                     <ShareSVG />
                     <span>Share a story</span>
                 </button>
+                </a>
+               
             </div>
         </div>
         </div>
