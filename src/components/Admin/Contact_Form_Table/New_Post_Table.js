@@ -91,7 +91,7 @@ export default class PostList extends React.Component {
                 
                     <i style={{color:"white", background:"red", cursor:'pointer'}} onClick={(e) => this.deleteRow(post._id, e)}>Delete</i>
                    <form onSubmit={(e) => this.approveRow(post._id, e)}>
-                    <input type="submit" style={{color:"white", background:"green",cursor:'pointer'}} value ='Approve'/>
+                    <input type="submit" style={{color:"white", background:"green",cursor:'pointer'}} value ='Disapprove'/>
                     </form>
                     </td>
                 </tr>

@@ -91,7 +91,7 @@ export default class Approved extends React.Component {
                   <Link style={{color:"white", background:"blue", cursor:'pointer'}} to={"/edit/"+post._id}>Edit</Link>
                     <i style={{color:"white", background:"red", cursor:'pointer'}} onClick={(e) => this.deleteRow(post._id, e)}>Delete</i>
                     <form onSubmit={(e) => this.approveRow(post._id, e)}>
-                    <input className="i" type='submit' style={{color:"white", background:"green",cursor:'pointer'}} value="Disapprove"/>
+                    <input className="i" type='submit' style={{color:"white", background:"green",cursor:'pointer'}} value="Approve"/>
                     </form>
                     
                   </td>

@@ -23,7 +23,7 @@ export default function AdminNav(props) {
 
 <Link to="/approved">
 <h4 className="m-1 h5" style={{color:'#FFFFFF', cursor:"pointer"}}>
-({props.approved})Approved Storyline
+({props.approved})Disapproved Storylines
 </h4>
 
 
