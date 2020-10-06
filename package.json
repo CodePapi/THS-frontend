@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "babel-preset-react-app": "^9.1.2",
+    "formik": "^2.1.7",
     "moment": "^2.28.0",
     "react": "^16.13.1",
     "react-country-region-selector": "^3.0.0",
@@ -22,7 +23,9 @@
     "react-siema": "^1.0.1",
     "react-slideshow-image": "^3.3.0",
     "react-time-ago": "^6.0.1",
-    "react-typed": "^1.2.0"
+    "react-typed": "^1.2.0",
+    "sass": "^1.26.11",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "react-scripts start",

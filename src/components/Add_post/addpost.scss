@@ -1,0 +1,94 @@
+.add-post-wrapper {
+    max-width: 1160px;
+    margin: auto;
+    padding: 0 20px;
+
+    &.typed-section {
+        margin-bottom: 50px;
+    }
+
+    @media screen and (min-width: 730px) {
+        padding: 0 50px;
+    }
+    @media screen and (min-width: 930px) {
+        padding: 0 120px;
+    }
+    @media screen and (min-width: 1440px) {
+        padding: 0 140px;
+    }
+
+    input,
+    textarea,
+    label {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        margin-top: 16px;
+        margin-bottom: 12px;
+        border: 1px solid #F2F2F2;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 12px 24px;
+        outline: none;
+    }
+
+    label {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .input-wrapper {
+        margin-bottom: 20px;
+
+        @media screen and (min-width: 730px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+    }
+
+    .add-post-buttons {
+        margin-top: 12px;
+
+        button {
+            outline: none;
+            border: none;
+            padding: 14px 0;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: transparent;
+            border: 2px solid transparent;
+            cursor: pointer;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+
+        .share-btn {
+            border-color:#333333;
+        }
+        .cancel-btn {
+            transition: all .2s ease-in-out;
+            &:hover {
+                border-color:#FAFAFA;
+                background: #FAFAFA;
+            }
+        }
+
+        @media screen and (min-width: 500px) {
+            button {
+                max-width: 177px;
+            }
+
+            .share-btn {
+                margin-right: 16px;
+            }
+        }
+    }
+}
+
+// 500px

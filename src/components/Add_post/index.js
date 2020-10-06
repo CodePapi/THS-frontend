@@ -1,12 +1,13 @@
 import React from 'react'
 import AddPostForm from './Add_Post_Form'
-import CloseHeader from './close_header'
 import TypedSection from './TypedSection'
+import { Navigation } from '../Partials';
+import './addpost.scss';
 
 export default function index() {
     return (
-        <div >
-            <CloseHeader/>
+        <div>
+            <Navigation />
             <TypedSection/>
             <AddPostForm/>
         </div>

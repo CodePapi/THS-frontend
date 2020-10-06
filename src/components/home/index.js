@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from '../layout/NavBar'
+import { Navigation } from '../Partials';
 import Body from './Body'
 
 export default function index() {
     return (
         <div>
-            <NavBar/>
+            <Navigation />
             <Body/>
         </div>
     )

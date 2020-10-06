@@ -1,108 +1,88 @@
-import React, { useState } from 'react'
+import React from 'react'
 //  import { CountryDropdown} from 'react-country-region-selector';
- import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { Formik, Form, Field } from 'formik';
 import axios from 'axios'
-let Endpoint= "https://tranquil-escarpment-53988.herokuapp.com" || "http://localhost:4001" 
+import * as yup from "yup";
+let Endpoint = "https://tranquil-escarpment-53988.herokuapp.com" || "http://localhost:4001";
 
 
 export default function Add_Post_Form() {
-    const history=useHistory()
+    const history = useHistory();
 
-    // const [loading, setLoading] = useState(true);
-    // // const [items, setItems] = useState(...);
-    // const [value, setValue] = useState();
-    // const [countryAdd, setCountryAdd] = useState(
-    //     { country: ''}
-    // );
+    const validationScheme = yup.object().shape({
+        message: yup.string().required("Required"),
+        name: yup.string().required("Required")
+    })
 
-    const [post, setPost] = useState(
-        { message: '', name: '', place: ''}
-    );
-
-    const handleChange = (event) => {
-        setPost({...post, [event.target.name]: event.target.value})
+    function cancelPostPage() {
+        return history.push("/");
     }
-    // const handleChangeCountry = (event) => {
-    //     setPost({...countryAdd, [event.target.name]: event.target.value})
-    // }
-    // const handleChangeCountry= (val)=> {
-    //     setCountryAdd({ country: val });
-    //   }
-    
 
-    const handleSubmit = (e) => {
-        history.push('/success')
-        e.preventDefault()
-        const obj = {
-            message: post.message,
-            name: post.name,
-         
-            place: post.place,
-            // country:countryAdd.country
-            
-              };
-        axios.post(Endpoint+'/posts/add',  obj)
-          .then(function (response) {
-              console.log(response)
-         
-          })
-          .catch(function (error) {
-              console.log(error)
-          }) 
-     
-
-
-          setPost({ message: '', name: '', place: ''})
-        //   setCountryAdd({country:""})
-          
-          ; }
     return (
-        <div style={{height:"90vh", width:"100%", margin:"auto"}}>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group" style={{width:"70%", margin:"auto"}}>
-                <label className="label h3">Story</label>
-                <textarea className="input border-top-0 border-left-0 bg-contain"
-                name="message"
-                 value={post.message} onChange={handleChange} required
-                
-                ></textarea>
-                </div>
-                <div className="form-group" style={{width:"70%", margin:"auto"}}>
-                <label className="label h3">Name</label>
-                <input className="input border-top-0 border-left-0 bg-contain"
-                name="name"
-                value={post.name} onChange={handleChange}
-              
-                />
-                </div>
-                <div className="form-group" style={{width:"70%", margin:"auto"}}>
-                <label className="label h3">Location</label>
-                <input className="input border-top-0 border-left-0 bg-contain"
-                name="place"
-                value={post.place} onChange={handleChange} 
-              
-               />
-                </div>
-                {/* <div className="form-group" style={{width:"70%", margin:"auto"}}>   
-                <label className="label h3">Location</label>
-        <CountryDropdown
-       name="country"
-       className="input-country border-top-0 border-left-0 bg-contain "
- 
-  labelType="full"
-  valueType="full"
-  value={countryAdd.country} 
-  
-//   onChange={handleChangeCountry} 
-  onChange={(val) => handleChangeCountry(val)} 
-  />
-
-
-</div> */}
-                <div className="form-group pt-5" style={{width:"70%", margin:"auto"}}>
-                <button  className="btn btn-dark  col-8 col-sm-4 col-xs-5 m-1" >Submit</button>
-                </div>
-            </form>
+        <div className="add-post-wrapper">
+            <Formik initialValues={{
+                message: "",
+                name: "",
+                place: "",
+            }}
+            validationSchema={validationScheme}
+                onSubmit={async (values, { setSubmitting }) => {
+                setSubmitting(true)
+                 await axios.post(Endpoint+'/posts/add',  values)
+                    .then(function (response) {
+                        console.log(response)
+                    
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+                    history.push("/")
+                setSubmitting(false)
+            }}>
+                {({values, errors, touched, dirty, isValid, isSubmitting})=>(
+                    <Form>
+                        <div className="input-wrapper">
+                            <label htmlFor="name">
+                                Name
+                                <Field className={`add-input ${errors.name && touched.name ? ("invalid-input") : null}`} name="name" />
+                                {errors.name && touched.name ? (
+                                    <p className="error-text">
+                                        {errors.name}
+                                    </p>
+                                    ) : null}
+                            </label>
+                            <label htmlFor="place">
+                                Location
+                                <Field className={`add-input ${errors.place && touched.place ? ("invalid-input") : null}`} name="place" />
+                                {errors.place && touched.place ? (
+                                    <p className="error-text">
+                                        {errors.place}
+                                    </p>
+                                    ) : null}
+                            </label>
+                        </div>
+                        <label htmlFor="message">
+                            Message
+                            <Field className={`add-input ${errors.message && touched.message ? ("invalid-input") : null}`} name="message" as="textarea" />
+                            {errors.message && touched.message ? (
+                                    <p className="error-text">
+                                        {errors.message}
+                                    </p>
+                            ) : null}
+                        </label>
+                        <div className="add-post-buttons">
+                            <button className="share-btn" type="submit" disabled={isSubmitting || !dirty || !isValid}>
+                                {isSubmitting ? (<div className="spinner-wrapper">
+                                    <div className="spinner"></div></div>) : "Share"}
+                            </button>
+                            <button disabled={isSubmitting} onClick={cancelPostPage} className="cancel-btn" type="button">
+                                Cancel
+                            </button>
+                        </div>
+                    </Form>
+                )}
+            </Formik>
         </div>
     )
 }
