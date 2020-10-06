@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react'
-import classNamees from "./home.module.css"
+// import classNamees from "./home.module.css"
 import ReactSiema from 'react-siema'
 import axios from "axios"
 import Zoom from 'react-reveal/Zoom';
