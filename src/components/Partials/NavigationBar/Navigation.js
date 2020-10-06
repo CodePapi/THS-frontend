@@ -47,13 +47,14 @@ const Navigation = () => {
                         <span>Software Developer:</span> Samuel Egbajie
                     </p>
                 </div>
-
+<a href="/add_post">
                 <button onClick={() => {
                     postPage();
                     handleClose();
                 }} className="share-btn">
                     Share a story
                 </button>
+                </a>
         </div>
         </Modal>
     )
