@@ -18,7 +18,7 @@ export default function Body() {
     const history = useHistory();
     let slider;
     const [data, setData] = useState([]);
-
+    const [loading, setLoading]=useState(true)
     useEffect(() => {
         async function fetchData() {
           // You can await here
@@ -28,6 +28,7 @@ export default function Body() {
             Endpoint+'/posts',
           );
           setData(result.data);
+          setLoading(false)
         }
     fetchData()},[]
     )
@@ -44,6 +45,9 @@ export default function Body() {
         <div style={{height:"100%", width:"100%",  margin:"auto", paddingBottom:"10vh"}}>
           
             <div className=" text-center container-fluid" style={{margin:"auto", width:"95vw"}}>
+             {(loading===true?<i className="fa fa-spinner fa-spin"></i>:
+             
+             <>
                 <div style={{minHeight:"50vh", margin:"auto"}} className="pt-1 mb-">
                 <div style={{marginTop:"40px"}}></div>  
             <ReactSiema height="100vh" {...options} ref={siema => slider = siema}>
@@ -77,7 +81,8 @@ export default function Body() {
     </div>
   ))}
             </ReactSiema>
-            </div>
+            </div></>
+)} 
             <div style={{maxHeight:"30vh"}}></div>
             <hr className="container"style={{background:"white",width:"96%", border:"1px solid black"}}/>
             
