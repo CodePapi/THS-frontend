@@ -1,25 +1,28 @@
 /* .w100{
     
 } */
-.btn{
-    width: 15vw !important;
-    border-radius: 500px;
+.btn {
+  width: 15vw !important;
+  border-radius: 500px;
 }
 
 @media screen and (max-width: 600px) {
-    .btnhide{
-        display: none;
-    }
-    .btn{
-        font-size: 10px;
-        width: 30vw;
-    }
+  .btnhide {
+    display: none;
+  }
+  .btn {
+    font-size: 10px;
+    width: 30vw;
+  }
+  .span {
+    font-size: 10px;
+  }
 }
-.h2{
-    font-weight: lighter;
-    cursor: pointer;
+.h2 {
+  font-weight: lighter;
+  cursor: pointer;
 }
-.h2:hover{
-    background-color: aliceblue;
-    color: black;
+.h2:hover {
+  background-color: aliceblue;
+  color: black;
 }
