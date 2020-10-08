@@ -3,7 +3,7 @@ import classes from "./home.module.css";
 function Footer() {
   return (
     <>
-      <div className={classes.Footer}>hello</div>
+      <div className={classes.Footer}></div>
     </>
   );
 }
