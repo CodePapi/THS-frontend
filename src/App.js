@@ -18,6 +18,7 @@ import HomeLog from "../src/components/auth/components/pages/Home";
 import Login from "../src/components/auth/components/auth/Login";
 
 import UserContext from "../src/components/auth/context/userContext";
+import SocialLinks from "./components/SocialLinks";
 function App() {
   const [userData, setUserData] = useState({
     token: undefined,
@@ -78,6 +79,7 @@ function App() {
           {/* <Route path="/posts/:id" exact component={All_Posts}/> */}
         </Switch>
       </UserContext.Provider>
+      <SocialLinks/>
     </BrowserRouter>
   );
 }

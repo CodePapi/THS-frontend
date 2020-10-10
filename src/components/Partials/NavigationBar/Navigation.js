@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import Logo from "../../images/LogoTwoHalf.svg"
 import { InfoSVG, CloseSVg } from './NavigationSVG'
 import { Modal } from '../Partials'
 import './navigation.scss';
+
 
 const Navigation = () => {
     let history = useHistory();
@@ -23,6 +24,8 @@ const Navigation = () => {
                 <button className="cancel-btn" onClick={handleClose}>
                     <CloseSVg />
                 </button>
+                
+                
                 <h2>About</h2>
                 <p>
                     2020 has been an interesting year to say the least.
@@ -62,9 +65,9 @@ const Navigation = () => {
     return (
         <div className="navigation-wrapper">
             <div className="logo-wrapper">
-                <Link to="/">
+                <NavLink to="/">
                 	<img src={Logo} alt="logo" />
-                </Link>
+                </NavLink>
             </div>
 
             <div onClick={handleShow} className="about-wrapper">

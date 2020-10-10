@@ -10,6 +10,7 @@ import ReactTimeAgo from "react-time-ago";
 import { useHistory } from "react-router-dom";
 import JavascriptTimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
+
 JavascriptTimeAgo.addLocale(en);
 
 let Endpoint =
