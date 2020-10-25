@@ -29,7 +29,7 @@ export default function SocialLinks() {
                />
 
 
-               <Link href="https://open.spotify.com/show/6VycKCMsGh4ZrLuH4Jc2Vp"
+               <Link href="https://open.spotify.com/show/6VycKCMsGh4ZrLuH4Jc2Vp?si=7GxsWtYCSXi-oyKodVslJA"
                tooltip="Spotify"
                icon="fa fa-spotify"
                styles={{backgroundColor: "#1db954", color: lightColors.green}} />

@@ -67,9 +67,10 @@ const Navigation = () => {
             <div className="logo-wrapper">
                 <NavLink to="/">
                 	<img src={Logo} alt="logo" />
+                  
                 </NavLink>
             </div>
-
+           <div className="headtxt">What are you telling your kids about 2020?</div> 
             <div onClick={handleShow} className="about-wrapper">
                 <span><InfoSVG /></span>
                 <p>About</p>
